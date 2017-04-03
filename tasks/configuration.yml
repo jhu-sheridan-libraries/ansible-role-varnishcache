@@ -1,0 +1,14 @@
+- name: Ensure daemon is enabled and started
+  service:
+    name: "{{ varnish_daemon }}"
+    state: started
+    enabled: true
+
+- name: Ensure default.vcl matches what we expect
+  template:
+    src: varnish_default.vcl
+    dest: /etc/varnish/default.vcl
+    mode: 0644
+    owner: root
+    group: root
+  notify: restart varnish

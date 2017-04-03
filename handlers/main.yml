@@ -1,2 +1,6 @@
 ---
 # handlers file for ansible-role-varnishcache
+- name: restart varnish
+  service:
+    name: "{{ varnish_daemon }}"
+    state: restarted
