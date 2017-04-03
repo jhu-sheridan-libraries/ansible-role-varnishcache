@@ -1,0 +1,4 @@
+---
+# tasks file for ansible-role-varnishcache
+- name: run OS specific tasks
+  include: "setup-{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"

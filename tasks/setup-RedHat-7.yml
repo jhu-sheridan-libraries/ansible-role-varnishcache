@@ -1,0 +1,13 @@
+---
+- name: Ensure repo exists
+  yum_repository:
+    name: "varnishcache_varnish{{ varnishcache_version }}"
+    description: Varnish Cache Daemon
+    baseurl: "https://packagecloud.io/varnishcache/varnish{{ varnishcache_version }}/el/7/$basearch"
+    gpgkey: "https://packagecloud.io/varnishcache/varnish{{ varnishcache_version }}/gpgkey"
+    repo_gpgcheck: true
+    gpgcheck: true
+    sslverify: true
+    sslcacert: /etc/pki/tls/ca-bundle.crt
+    metadata_expire: 300
+    enabled: true
