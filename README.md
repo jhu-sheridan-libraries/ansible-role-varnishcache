@@ -1,38 +1,41 @@
-Role Name
+Varnish Cache Ansible Role
 =========
 
-A brief description of the role goes here.
+Ansible role to install and configure Varnish Cache (5.x by default)
 
 Requirements
 ------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+The only assumed requirement is that CentOS or RedHat 7 is on the target host.
 
 Role Variables
 --------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+* varnish_backend_default_host: (optional)
+  - This will set the host of the "backend default" configuration in default.vcl
+* varnish_backend_default_port: (optional)
+  - This will set the port of the "backend default" configuraiton in default.vcl
+* varnish_version: (optional)
+  - This sets the major version that will be installed.  Currently only tested with 5.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No other roles or variables are required.
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
+    - hosts: all
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: ansible-role-varnishcache, varnish_backend_default_host: 127.0.0.1, varnish_backend_default_port: 6081, varnish_version: 5 }
 
 License
 -------
 
-BSD
+TBD
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Johns Hopkins Sheridan Libraries
+  - Derek Belrose <dbelrose@jhu.edu>
