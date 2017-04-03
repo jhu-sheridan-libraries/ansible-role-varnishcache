@@ -12,6 +12,11 @@
     metadata_expire: 300
     enabled: true
 
+- name: Ensure epel-release is installed
+  yum:
+    name: epel-release
+    state: installed
+    
 - name: Ensure varnish package is installed
   yum:
     name: varnish
