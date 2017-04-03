@@ -11,3 +11,9 @@
     sslcacert: /etc/pki/tls/certs/ca-bundle.crt
     metadata_expire: 300
     enabled: true
+
+- name: Ensure varnish package is installed
+  yum:
+    name: varnish
+    enablerepo: "varnishcache-varnish{{ varnishcache_version }}"
+    state: latest

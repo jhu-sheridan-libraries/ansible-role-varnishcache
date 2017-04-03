@@ -2,3 +2,9 @@
 # tasks file for ansible-role-varnishcache
 - name: run OS specific tasks
   include: "setup-{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
+
+- name: Ensure daemon is enabled and started
+  service:
+    name: "{{ varnish_daemon }}"
+    state: started
+    enabled: true
