@@ -15,5 +15,5 @@
 - name: Ensure varnish package is installed
   yum:
     name: varnish
-    enablerepo: "varnishcache-varnish{{ varnishcache_version }}"
+    enablerepo: "varnishcache_varnish{{ varnishcache_version }}"
     state: latest
