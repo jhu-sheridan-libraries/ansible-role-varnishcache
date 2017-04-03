@@ -8,6 +8,6 @@
     repo_gpgcheck: true
     gpgcheck: true
     sslverify: true
-    sslcacert: /etc/pki/tls/ca-bundle.crt
+    sslcacert: /etc/pki/tls/certs/ca-bundle.crt
     metadata_expire: 300
     enabled: true
